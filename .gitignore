@@ -1,0 +1,8 @@
+*.swp
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.sln
+.vs/
+*vcxproj*
