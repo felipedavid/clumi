@@ -2,7 +2,7 @@
 
 void *buf__grow(void *prev, size_t wanted_cap, size_t prev_cap, size_t elem_size) {
     size_t new_cap = MAX(wanted_cap, (prev_cap * 2 + 1));
-    size_t new_size = offsetof(Buf_Hdr, buf) + (new_cap * elem_size);
+    size_t new_size = offsetof(Buf_Hdr, a) + (new_cap * elem_size);
 
     Buf_Hdr *ptr;
     if (prev) {
@@ -13,7 +13,7 @@ void *buf__grow(void *prev, size_t wanted_cap, size_t prev_cap, size_t elem_size
     }
     ptr->cap = new_cap;
 
-    return &(ptr->buf);
+    return &(ptr->a);
 }
 
 void buf_test() {

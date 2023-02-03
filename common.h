@@ -1,7 +1,7 @@
 #pragma once
-
+#include <assert.h>
+#include <stdio.h>
 #include <stdbool.h>
-#include <stddef.h>
 
 typedef unsigned char u8;
 typedef unsigned short u16;
