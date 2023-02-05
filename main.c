@@ -1,12 +1,13 @@
 #include "common.h"
 #include "stretchy_buffer.h"
-#include "instr.h"
+#include "chunk.h"
 #include "debug.h"
 
 int main(int argc, char** argv) {
     buf_test();
 
-    u8 *code = NULL;
-    buf_push(code, OP_RETURN);
-    disassemble(code, "test");
+    Chunk chunk = {0};
+    int constant = add_const(chunk.data, 234.5);
+    buf_push(chunk.code, OP_CONSTANT);
+    buf_push(chunk.code, constant);
 }

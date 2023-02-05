@@ -12,6 +12,7 @@ int disassemble_instr(u8 *code, int offset) {
 
     u8 instr = code[offset];
     switch (instr) {
+    case OP_CONSTANT:
     case OP_RETURN:
         printf("OP_RETURN\n");
         return offset+1;
